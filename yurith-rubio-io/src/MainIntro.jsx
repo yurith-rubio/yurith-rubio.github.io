@@ -1,3 +1,3 @@
 export default function MainIntro() {
-    return <div className="text-up">This is the Main Intro</div>
+    return <div id="mainIntro" className="text-up light-background">This is the Main Intro</div>
 }

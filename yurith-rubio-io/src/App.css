@@ -1,8 +1,22 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root{
+  --text-color: #007ABE;
+  --highlights: #9DCF75;
+  --bg-color: #F0FFD9;
+  --accents: #fff;
+}
+
+.light-background{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.dark-background{
+  --bg-color: var(--text-color);
+  --text-color: var(--bg-color)
+}
+
+#mainIntro{
+  height:100vh;
+  width: 100vw;
 }
 
 .text-up{
