@@ -123,6 +123,10 @@ h1{
   fill: var(--light-green);
 }
 
+.service-ball-path.selected {
+  fill: var(--highlights);
+}
+
 .service-ball-content{
   display: flex;
   position: relative;
