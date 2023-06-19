@@ -30,7 +30,6 @@ export default function Path() {
                 noiseOffsetY: Math.random() * 1000,
             });
         }
-        console.log(pointsArr);
         return pointsArr;
     }
 

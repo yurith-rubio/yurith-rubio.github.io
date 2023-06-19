@@ -5,7 +5,7 @@ export default function ServiceBall(props) {
 
     return <>
         <div className="service-ball-content">
-            <div className="service-ball-info">dangerouslySetInnerHTML={{__html: tag}}</div>
+            <div className="service-ball-info"></div>
                 <svg viewBox="0 0 200 200">
                     <Path/>
                 </svg>
