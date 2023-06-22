@@ -17,8 +17,17 @@ html body{
   display: flex;
 }
 
-body {
+body, button {
   font-family: 'Open Sans', sans-serif;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+button{
+  border: none;
 }
 
 .light-background{
@@ -39,6 +48,7 @@ body {
 .content-boundary{
   max-width: 1200px;
   margin: auto;
+  width: 100%;
 }
 
 .full-height{
@@ -56,6 +66,12 @@ h1{
   font-weight: 700;
 }
 
+.h2-heading{
+  font-size: 2.5rem;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
 .intro-subheading{
   font-size: 3.2rem;
   font-weight: 400;
@@ -63,6 +79,10 @@ h1{
 
 .big-text{
   font-size: 2.3rem;
+}
+
+p{
+  font-size: 18px;
 }
 
 /* ---------- */
@@ -78,13 +98,31 @@ h1{
 .intro-girl{
   position: absolute;
   bottom: 0;
-  height:450px;
+  height:30%;
+}
+
+.text-light-green{
+  color: var(--light-green);
+}
+
+#ServicesSection.text-light-green p{
+  color: var(--light-green);
+}
+
+/* SHAPES STYLES */
+.color-light-green{
+  fill: var(--light-green);
+  color: var(--light-green);
+}
+
+/* SECTIONS */
+section{
+  height: 100vh;
 }
 
 /* SERVICES */
 #Services{
   color: var(--light-green);
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,11 +146,12 @@ h1{
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: var(--light-green);
+  background-color: var(--light-green)
 }
 
 .service-nav-dot.active{
   background-color: var(--highlights);
+  cursor: pointer;
 }
 
 .service-nav-dot:not(:last-child){
@@ -121,6 +160,12 @@ h1{
 
 .service-ball-path{
   fill: var(--light-green);
+  cursor: pointer;
+}
+
+svg.svg-service-ball {
+  width: 200px;
+  height: 200px;
 }
 
 .service-ball-path.selected {
@@ -130,14 +175,145 @@ h1{
 .service-ball-content{
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 
 .service-ball-info{
-  position: absolute;
-  top: -50px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
+.service-ball-info.down-text{
+  position: relative;
+  top: 230px;
+}
+
+.service-ball-arrow.down-arrow{
+  position:absolute; 
+  top:200px;
+  right:0;
+  rotate:180deg;
+  transform:scaleX(-1)
+}
+
+.service-ball-arrow.up-arrow{
+  position: absolute;
+  right: 4px;
+  top: 25px;
+}
+
+#ServicesNavDots{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50px;
+}
+
+.service-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--light-green);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#blobs__split.all-light-green *:not(#dotted-circle){
+  fill: var(--light-green);
+  color: var(--light-green);
+}
+
+#blobs__split #dotted-circle{
+  fill: transparent;
+}
+
+#blobs__split .dotted-circle{
+  stroke: var(--light-green);
+  stroke-width: 1px;
+  stroke-dasharray: 3;
+}
+
+/* DATA VISUALIZATION */
+#DataVisualization{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.data-visualization-content{
+  display: flex;
+  align-items: center;
+}
+
+.service-graph{
+  width:70%;
+}
+
+.service-info{
+  width:30%;
+  height: fit-content;
+}
+
+/* NAVBAR */
+#NavBar{
+  position: fixed;
+  background-color: var(--bg-color);
+  padding: 30px 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-bar-content{
+  display: flex;
+  justify-content: end;
+  gap: 50px;
+  width: 100%;
+}
+
+.nav-bar-button{
+  width: max-content;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  background-color: var(--bg-color);
+  color: var(--accents);
+  border: 1px solid var(--accents);
+}
+
+.nav-bar-button:not(.active){
+  cursor: pointer;
+}
+.nav-bar-button:before{
+  border-left: 1px solid var(--light-green) !important;
+  height:43px;
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  display: flex;
+}
+
+.nav-bar-button.active:before{
+  border-left: 1px solid var(--light-green) !important;
+}
+
+.nav-bar-button:before{
+  border-left: 1px solid var(--light-green) !important;
+}
+
+.nav-bar-button.active{
+  background-color: var(--light-green);
+  color: var(--text-color);
+}
+
+.nav-bar-button:hover:not(.active){
+  background-color: var(--highlights);
+  color: var(--text-color);
+}
 /* ANIMATIONS */
 .text-up{
   position: relative;
@@ -164,16 +340,4 @@ h1{
 
 @media (prefers-reduced-motion: no-preference) {
   
-}
-
-
-/* TESTING THE BLOB */
-
-svg {
-  width: 200px;
-  height: 200px;
-}
-
-.service-ball-path {
-  cursor: pointer;
 }

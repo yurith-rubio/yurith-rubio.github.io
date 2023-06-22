@@ -1,3 +1,15 @@
+import {useState} from "react";
+
 export default function ServiceNavDot() {
-    return <div className='service-nav-dot'></div>
+    const [hover, setHover] = useState(false);
+
+    function handleMouseEnter(){
+        setHover(true);
+    }
+
+    function handleMouseLeave(){
+        setHover(false);
+    }
+
+    return <button className={hover === true ? 'service-nav-dot active' : 'service-nav-dot'} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}></button>
 }
